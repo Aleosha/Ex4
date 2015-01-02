@@ -17,8 +17,21 @@ namespace Interfaces
             do
             {
                 option = getOptionFromUser();
+
+                if (option > 0)
+                {
+                    IMenuItem chosenOption = getMenuItem(option);
+
+                    if (chosenOption is IActionMenuItem)
+                    {
+                        (chosenOption as IActionMenuItem).DoAction();
+                    }
+                }                
+
             } while (option != 0);
         }
+
+ 
 
         private int getOptionFromUser()
         {
@@ -29,6 +42,7 @@ namespace Interfaces
             {
                 Console.WriteLine("Please choose your option");
                 ShowMenuItems();
+                Console.WriteLine(String.Format("{0}. {1}", 0, "Exit"));
 
                 if (int.TryParse(Console.ReadLine(), out option) && isOptionValid(option))
                 {

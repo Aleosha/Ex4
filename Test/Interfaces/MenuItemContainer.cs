@@ -42,5 +42,11 @@ namespace Interfaces
             return (i_MenuOption >= 0 && i_MenuOption <= m_MenuItems.Count);            
         }
         
+        protected IMenuItem getMenuItem(int i_Option)
+        {
+            return m_MenuItems[i_Option-1];
+        }
+
+        
     }
 }
