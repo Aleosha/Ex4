@@ -39,8 +39,16 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ActionMenuItem.cs" />
+    <Compile Include="MenuItemContainer.cs" />
+    <Compile Include="IMenuItem.cs" />
     <Compile Include="MainMenu.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ShowDate.cs" />
+    <Compile Include="ShowTime.cs" />
+    <Compile Include="ShowVersion.cs" />
+    <Compile Include="SubMenu.cs" />
+    <Compile Include="WordsCounter.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

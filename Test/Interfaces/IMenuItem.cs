@@ -6,8 +6,7 @@ using System.Threading.Tasks;
 
 namespace Interfaces
 {
-    public class MainMenu : MenuItemContainer, IMenuItem
+    public interface IMenuItem
     {
-
     }
 }
