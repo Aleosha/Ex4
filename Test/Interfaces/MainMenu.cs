@@ -8,54 +8,17 @@ namespace Interfaces
 {
     public class MainMenu : MenuItemContainer, IMenuItem
     {
-        public override void Show()
+
+        public MainMenu()
         {
-           
-            Console.WriteLine("This is the main menu");
-            int option;
-
-            do
-            {
-                option = getOptionFromUser();
-
-                if (option > 0)
-                {
-                    IMenuItem chosenOption = getMenuItem(option);
-
-                    if (chosenOption is IActionMenuItem)
-                    {
-                        (chosenOption as IActionMenuItem).DoAction();
-                    }
-                }                
-
-            } while (option != 0);
+            this.Name = "Main menu";
         }
 
- 
+        
 
-        private int getOptionFromUser()
+        protected override void ShowQuitOption()
         {
-            int option;
-            bool isValidInput = false;
-
-            do
-            {
-                Console.WriteLine("Please choose your option");
-                ShowMenuItems();
-                Console.WriteLine(String.Format("{0}. {1}", 0, "Exit"));
-
-                if (int.TryParse(Console.ReadLine(), out option) && isOptionValid(option))
-                {
-                    isValidInput = true;
-                }
-                else
-                {
-                    Console.WriteLine("Invalid option");
-                }
-
-            } while (!isValidInput);
-
-            return option;
+            Console.WriteLine(String.Format("{0}. {1}", 0, "Exit"));
         }
     }
 }

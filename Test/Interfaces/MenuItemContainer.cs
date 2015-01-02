@@ -33,9 +33,12 @@ namespace Interfaces
             {
                 Console.WriteLine(String.Format("{0}. {1}", count++, menuItem.Name));
             }
+            ShowQuitOption();
         }
 
-        public abstract void Show();
+      //  public abstract void Show();
+
+        protected abstract void ShowQuitOption();
 
         protected bool isOptionValid(int i_MenuOption)
         {
@@ -47,6 +50,57 @@ namespace Interfaces
             return m_MenuItems[i_Option-1];
         }
 
+        protected int getOptionFromUser()
+        {
+            int option;
+            bool isValidInput = false;
+
+            do
+            {
+                Console.WriteLine("Please choose your option");
+                ShowMenuItems();
+
+
+                if (int.TryParse(Console.ReadLine(), out option) && isOptionValid(option))
+                {
+                    isValidInput = true;
+                }
+                else
+                {
+                    Console.WriteLine("Invalid option");
+                }
+
+            } while (!isValidInput);
+
+            return option;
+        }
+
+        public void Show()
+        {
+
+            Console.WriteLine(this.Name);
+            int option;
+
+            do
+            {
+                option = getOptionFromUser();
+
+                if (option > 0)
+                {
+                    IMenuItem chosenOption = getMenuItem(option);
+
+                    if (chosenOption is IActionMenuItem)
+                    {
+                        (chosenOption as IActionMenuItem).DoAction();
+                    }
+                    else if (chosenOption is MenuItemContainer)
+                    {
+                        (chosenOption as MenuItemContainer).Show();
+                    }
+                }
+
+            } while (option != 0);
+        }
         
     }
 }

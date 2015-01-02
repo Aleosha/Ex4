@@ -14,9 +14,11 @@ namespace Interfaces
             this.Name = i_MenuName;
         }
 
-        public override void Show()
-        {
+      
 
+        protected override void ShowQuitOption()
+        {
+            Console.WriteLine(String.Format("{0}. {1}", 0, "Back"));
         }
     }
 }
