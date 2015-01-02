@@ -13,5 +13,10 @@ namespace Interfaces
         {
             this.r_MenuName = i_MenuName;
         }
+
+        public override void Show()
+        {
+
+        }
     }
 }

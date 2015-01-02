@@ -24,7 +24,7 @@ namespace Test
             //Add Show version to main menu
         }
 
-        private void displayInterfacesMenu()
+        private static void displayInterfacesMenu()
         {
             //Create main menu
             Interfaces.MainMenu mainMenu = new Interfaces.MainMenu();

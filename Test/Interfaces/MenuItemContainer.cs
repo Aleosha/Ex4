@@ -8,14 +8,20 @@ namespace Interfaces
 {
     public abstract class MenuItemContainer : IMenuItem
     {
+
+        List<IMenuItem> m_MenuItems = new List<IMenuItem>();
+
         public void Add(IMenuItem i_MenuItem)
         {
             throw new NotImplementedException();
         }
 
-        public object Show()
+        protected void ShowMenuItems()
         {
-            throw new NotImplementedException();
+
         }
+
+        public abstract void Show();
+        
     }
 }

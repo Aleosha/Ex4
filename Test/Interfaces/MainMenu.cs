@@ -8,6 +8,9 @@ namespace Interfaces
 {
     public class MainMenu : MenuItemContainer, IMenuItem
     {
-
+        public override void Show()
+        {
+            
+        }
     }
 }
