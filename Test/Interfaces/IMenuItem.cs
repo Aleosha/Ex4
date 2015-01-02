@@ -8,5 +8,6 @@ namespace Interfaces
 {
     public interface IMenuItem
     {
+        string Name { get; }
     }
 }
