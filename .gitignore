@@ -59,3 +59,10 @@ Test/Delegates/obj/Debug/TemporaryGeneratedFile_5937a670-0e60-4077-877b-f7221da3
 Test/Delegates/obj/Debug/TemporaryGeneratedFile_036C0B5B-1481-4323-8D20-8F5ADCB23D92.cs
 Test/Delegates/obj/Debug/TemporaryGeneratedFile_E7A71F73-0F8D-4B9B-B56E-8E70B10BC5D3.cs
 Test/Delegates/obj/Debug/DesignTimeResolveAssemblyReferencesInput.cache
+*.dll
+*.pdb
+Test/Delegates/obj/Debug/Delegates.csproj.FileListAbsolute.txt
+Test/Interfaces/obj/Debug/Interfaces.csproj.FileListAbsolute.txt
+Test/Test/bin/Debug/Test.exe
+Test/Test/obj/Debug/Test.csprojResolveAssemblyReference.cache
+Test/Test/obj/Debug/Test.exe
