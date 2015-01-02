@@ -10,10 +10,21 @@ namespace Interfaces
     {
         public override void Show()
         {
-            bool isValidInput = false;
+           
             Console.WriteLine("This is the main menu");
             int option;
-            
+
+            do
+            {
+                option = getOptionFromUser();
+            } while (option != 0);
+        }
+
+        private int getOptionFromUser()
+        {
+            int option;
+            bool isValidInput = false;
+
             do
             {
                 Console.WriteLine("Please choose your option");
@@ -23,7 +34,14 @@ namespace Interfaces
                 {
                     isValidInput = true;
                 }
+                else
+                {
+                    Console.WriteLine("Invalid option");
+                }
+
             } while (!isValidInput);
+
+            return option;
         }
     }
 }
