@@ -17,7 +17,7 @@ namespace Interfaces
 
         public void DoAction()
         {
-            throw new NotImplementedException();
+            Console.WriteLine(DateTime.Now.ToString("HH:mm:ss"));
         }
     }
 }

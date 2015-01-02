@@ -77,12 +77,12 @@ namespace Interfaces
 
         public void Show()
         {
-
-            Console.WriteLine(this.Name);
+            
             int option;
 
             do
             {
+                showMenuHeader();
                 option = getOptionFromUser();
 
                 if (option > 0)
@@ -100,6 +100,13 @@ namespace Interfaces
                 }
 
             } while (option != 0);
+        }
+
+        private void showMenuHeader()
+        {
+            Console.WriteLine(new String('-', this.Name.Length));
+            Console.WriteLine(this.Name);
+            Console.WriteLine(new String('-', this.Name.Length));
         }
         
     }
