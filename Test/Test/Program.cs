@@ -8,7 +8,8 @@ namespace Test
     {
         private static Delegates.MainMenu m_DelegatesMainMenu;
 
-        static void Main(string[] args)
+
+        public static void Main(string[] args)
         {
             displayInterfacesMenu();
             displayDelegatesMenu();
@@ -18,6 +19,22 @@ namespace Test
         {
             //Create main menu
             m_DelegatesMainMenu = new Delegates.MainMenu();
+            Delegates.ActionItem wordsCounter = new Delegates.ActionItem((int)eAction.WordsCounter, "Words Counter");
+            wordsCounter.AttachDoActionObserver(DoAction);
+            m_DelegatesMainMenu.AddMenuItem(wordsCounter);
+            Delegates.Menu showDateTime = new Delegates.Menu("Show Date/Time", false);
+            Delegates.ActionItem showDate = new Delegates.ActionItem((int)eAction.ShowDate, "Show Date");
+            showDate.AttachDoActionObserver(DoAction);
+            showDateTime.Add(showDate);
+            Delegates.ActionItem showTime = new Delegates.ActionItem((int)eAction.ShowTime, "Show Time");
+            showTime.AttachDoActionObserver(DoAction);
+            showDateTime.Add(showTime);
+            m_DelegatesMainMenu.AddMenuItem(showDateTime);
+            Delegates.ActionItem showVersion = new Delegates.ActionItem((int)eAction.ShowVersion, "Show version");
+            showVersion.AttachDoActionObserver(DoAction);
+            m_DelegatesMainMenu.AddMenuItem(showVersion);
+
+            m_DelegatesMainMenu.Show();
             //Add Words counter to main menu
             //Add date sub menu to main menu
             //Add Show date to sub menu
@@ -44,6 +61,28 @@ namespace Test
             mainMenu.Add(new Interfaces.ShowVersion());
 
             mainMenu.Show();
+        }
+
+        public static void DoAction(int i_Action)
+        {
+            switch (i_Action)
+            {
+                case (int)eAction.WordsCounter:
+                    Console.WriteLine("Words counter");
+                    break;
+                case (int)eAction.ShowDate:
+                    Console.WriteLine("Showing Date");
+                    break;
+                case (int)eAction.ShowTime:
+                    Console.WriteLine("Showing Time");
+                    break;
+                case (int)eAction.ShowVersion:
+                    Console.WriteLine("Showing version");
+                    break;
+                default:
+                    break;
+            }
+            Console.ReadLine();
         }
     }
 }

@@ -7,18 +7,22 @@ namespace Delegates
 {
     public class MainMenu
     {
-        private List<MenuItem> menuItems = new List<MenuItem>();
+        const bool v_IsMainMenu = true;
+        private Menu m_MainMenu = new Menu("Main Menu", v_IsMainMenu);
 
         public MainMenu()
         {
-            Show();
+            //Show();
         }
 
         public void Show()
         {
-            Console.Clear();
-            Console.WriteLine("this is the delegates main menu");
-            Console.ReadLine();
+            m_MainMenu.Show();
+        }
+
+        public void AddMenuItem(MenuItem i_MenuItem)
+        {
+            m_MainMenu.Add(i_MenuItem);
         }
     }
 }
