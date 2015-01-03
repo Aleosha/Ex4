@@ -6,6 +6,8 @@ namespace Test
 {
     class Program
     {
+        private static Delegates.MainMenu m_DelegatesMainMenu;
+
         static void Main(string[] args)
         {
             displayInterfacesMenu();
@@ -15,6 +17,7 @@ namespace Test
         private static void displayDelegatesMenu()
         {
             //Create main menu
+            m_DelegatesMainMenu = new Delegates.MainMenu();
             //Add Words counter to main menu
             //Add date sub menu to main menu
             //Add Show date to sub menu
