@@ -54,9 +54,9 @@ namespace Interfaces
             bool isValidInput = false;
 
             do
-            {
-                Console.WriteLine("Please choose your option");
+            {                
                 ShowMenuItems();
+                Console.WriteLine("Please choose your option");
 
 
                 if (int.TryParse(Console.ReadLine(), out option) && isOptionValid(option))
