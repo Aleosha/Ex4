@@ -7,6 +7,8 @@ namespace Delegates
 {
     public class MainMenu
     {
+        private List<MenuItem> menuItems = new List<MenuItem>();
+
         public MainMenu()
         {
             Show();

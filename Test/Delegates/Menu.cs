@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Delegates
 {
-    public class SubMenu : MenuItem
+    public class Menu : MenuItem
     {
     }
 }
