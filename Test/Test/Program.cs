@@ -68,21 +68,47 @@ namespace Test
             switch (i_Action)
             {
                 case (int)eAction.WordsCounter:
-                    Console.WriteLine("Words counter");
+                    CountWords();
                     break;
                 case (int)eAction.ShowDate:
-                    Console.WriteLine("Showing Date");
+                    ShowDate();
                     break;
                 case (int)eAction.ShowTime:
-                    Console.WriteLine("Showing Time");
+                    ShowTime();
                     break;
                 case (int)eAction.ShowVersion:
-                    Console.WriteLine("Showing version");
+                    ShowVersion();
                     break;
                 default:
                     break;
             }
+            Console.WriteLine("Press any key to continue...");
             Console.ReadLine();
+        }
+
+        public static void ShowDate()
+        {
+            Console.WriteLine(DateTime.Now.ToString("dd/MM/yyyy"));
+        }
+
+        public static void ShowTime()
+        {
+            Console.WriteLine(DateTime.Now.ToString("HH:mm:ss"));
+        }
+
+        public static void ShowVersion()
+        {
+            Console.WriteLine("Version: 15.1.4.0");
+        }
+
+        public static void CountWords()
+        {
+            char[] wordsSeparator = {' '};
+            int numOfWords;
+            Console.WriteLine("Please enter a sentence for counting it's number of words");
+            string sentence = Console.ReadLine();
+            numOfWords = sentence.Split(wordsSeparator).Length;
+            Console.WriteLine("Your sentence contains {0} words", numOfWords);
         }
     }
 }
