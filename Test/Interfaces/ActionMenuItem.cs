@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Interfaces
 {
-    interface IActionMenuItem : IMenuItem
+    public interface IActionMenuItem : IMenuItem
     {
         void DoAction();  
     }
