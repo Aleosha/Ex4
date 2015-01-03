@@ -19,27 +19,28 @@ namespace Test
         {
             //Create main menu
             m_DelegatesMainMenu = new Delegates.MainMenu();
+            //Insert word counter menu item to main menu:
             Delegates.ActionItem wordsCounter = new Delegates.ActionItem((int)eAction.WordsCounter, "Words Counter");
             wordsCounter.AttachDoActionObserver(DoAction);
             m_DelegatesMainMenu.AddMenuItem(wordsCounter);
+            //Create show date/time sub menu:
             Delegates.Menu showDateTime = new Delegates.Menu("Show Date/Time", false);
+            //Insert showDate menu item to showDateTime submenu:
             Delegates.ActionItem showDate = new Delegates.ActionItem((int)eAction.ShowDate, "Show Date");
             showDate.AttachDoActionObserver(DoAction);
             showDateTime.Add(showDate);
+            ////Insert showTime menu item to showDateTime submenu:
             Delegates.ActionItem showTime = new Delegates.ActionItem((int)eAction.ShowTime, "Show Time");
             showTime.AttachDoActionObserver(DoAction);
             showDateTime.Add(showTime);
+            //Insert showDateTime submenu MainMenu:
             m_DelegatesMainMenu.AddMenuItem(showDateTime);
+            //Insert showVersion menu item to main menu:
             Delegates.ActionItem showVersion = new Delegates.ActionItem((int)eAction.ShowVersion, "Show version");
             showVersion.AttachDoActionObserver(DoAction);
             m_DelegatesMainMenu.AddMenuItem(showVersion);
 
             m_DelegatesMainMenu.Show();
-            //Add Words counter to main menu
-            //Add date sub menu to main menu
-            //Add Show date to sub menu
-            //Add Show time to sub menu
-            //Add Show version to main menu
         }
 
         private static void displayInterfacesMenu()

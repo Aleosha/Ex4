@@ -12,7 +12,6 @@ namespace Delegates
 
         public MainMenu()
         {
-            //Show();
         }
 
         public void Show()
