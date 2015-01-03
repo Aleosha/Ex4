@@ -17,7 +17,7 @@ namespace Interfaces
 
         public void DoAction()
         {
-            Console.WriteLine("15.1.4.0");
+            Console.WriteLine("Version: 15.1.4.0");
         }
     }
 }
