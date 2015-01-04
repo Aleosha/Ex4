@@ -11,10 +11,8 @@ namespace Interfaces
         {
             this.Name = "Main menu";
         }
-
         
-
-        protected override void ShowQuitOption()
+        protected override void showQuitOption()
         {
             Console.WriteLine(String.Format("{0}. {1}", 0, "Exit"));
         }

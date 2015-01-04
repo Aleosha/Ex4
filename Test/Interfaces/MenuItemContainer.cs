@@ -10,8 +10,6 @@ namespace Interfaces
         List<IMenuItem> m_MenuItems = new List<IMenuItem>();
         private string m_Name;
 
-
-
         public string Name
         {
             get { return m_Name; }
@@ -24,19 +22,17 @@ namespace Interfaces
             m_MenuItems.Add(i_MenuItem);
         }
 
-        protected void ShowMenuItems()
+        protected void showMenuItems()
         {
             int count = 1;
             foreach(IMenuItem menuItem in m_MenuItems)
             {
                 Console.WriteLine(String.Format("{0}. {1}", count++, menuItem.Name));
             }
-            ShowQuitOption();
+            showQuitOption();
         }
 
-      //  public abstract void Show();
-
-        protected abstract void ShowQuitOption();
+        protected abstract void showQuitOption();
 
         protected bool isOptionValid(int i_MenuOption)
         {
@@ -56,7 +52,7 @@ namespace Interfaces
             do
             {
                 showMenuHeader();
-                ShowMenuItems();
+                showMenuItems();
                 Console.WriteLine("Please choose your option");
 
 
@@ -75,7 +71,7 @@ namespace Interfaces
             return option;
         }
 
-        public void Show()
+        public void ShowMenu()
         {
             
             int option;
@@ -94,7 +90,7 @@ namespace Interfaces
                     }
                     else if (chosenOption is MenuItemContainer)
                     {
-                        (chosenOption as MenuItemContainer).Show();
+                        (chosenOption as MenuItemContainer).ShowMenu();
                     }
                 }
 
@@ -103,9 +99,11 @@ namespace Interfaces
 
         private void showMenuHeader()
         {
-            Console.WriteLine(new String('-', this.Name.Length));
-            Console.WriteLine(this.Name);
-            Console.WriteLine(new String('-', this.Name.Length));
+            string separator = new String('-', this.Name.Length);
+            StringBuilder stringBuilder = new StringBuilder(separator).Append(Environment.NewLine).
+                                              Append(this.Name).Append(Environment.NewLine).
+                                              Append(separator);
+            Console.WriteLine(stringBuilder.ToString());
         }
         
     }

@@ -61,7 +61,7 @@ namespace Test
             //Add Show version to main menu
             mainMenu.Add(new Test.ShowVersionActionMenuItem());
 
-            mainMenu.Show();
+            mainMenu.ShowMenu();
         }
 
         public static void DoAction(int i_Action)
