@@ -54,7 +54,8 @@ namespace Interfaces
             bool isValidInput = false;
 
             do
-            {                
+            {
+                showMenuHeader();
                 ShowMenuItems();
                 Console.WriteLine("Please choose your option");
 
@@ -65,6 +66,7 @@ namespace Interfaces
                 }
                 else
                 {
+                    Console.Clear();
                     Console.WriteLine("Invalid option");
                 }
 
@@ -79,10 +81,9 @@ namespace Interfaces
             int option;
 
             do
-            {
-                showMenuHeader();
+            {                
                 option = getOptionFromUser();
-
+                Console.Clear();
                 if (option > 0)
                 {
                     IMenuItem chosenOption = getMenuItem(option);

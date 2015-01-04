@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Interfaces
+namespace Test
 {
-    public class ShowVersion : IActionMenuItem
+    public class ShowVersionActionMenuItem : Interfaces.IActionMenuItem
     {
 
         private const string m_Name = "Show version";

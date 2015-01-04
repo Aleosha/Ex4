@@ -2,12 +2,11 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Interfaces
+namespace Test
 {
-    public class WordsCounter : IActionMenuItem
+    public class ShowDateActionMenuItem : Interfaces.IActionMenuItem
     {
-
-        private const string m_Name = "Words counter";
+        private const string m_Name = "Show date";
 
         public string Name
         {
@@ -17,7 +16,7 @@ namespace Interfaces
 
         public void DoAction()
         {
-
+            Console.WriteLine(DateTime.Now.ToString("d/M/yyyy"));
         }
     }
 }

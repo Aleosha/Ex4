@@ -2,11 +2,11 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Interfaces
+namespace Test
 {
-    public class ShowDate : IActionMenuItem
+    public class ShowTimeActionMenuItem : Interfaces.IActionMenuItem
     {
-        private const string m_Name = "Show date";
+        private const string m_Name = "Show time";
 
         public string Name
         {
@@ -16,7 +16,7 @@ namespace Interfaces
 
         public void DoAction()
         {
-            Console.WriteLine(DateTime.Now.ToString("d/M/yyyy"));
+            Console.WriteLine(DateTime.Now.ToString("HH:mm:ss"));
         }
     }
 }

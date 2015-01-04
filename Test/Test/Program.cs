@@ -48,18 +48,18 @@ namespace Test
             //Create main menu
             Interfaces.MainMenu mainMenu = new Interfaces.MainMenu();
             //Add Words counter to main menu
-            mainMenu.Add(new Interfaces.WordsCounter());
+            mainMenu.Add(new Test.WordsCounterActionMenuItem());
 
             Interfaces.SubMenu subMenu = new Interfaces.SubMenu("Show date/time");
             //Add date sub menu to main menu
             mainMenu.Add(subMenu);
             //Add Show date to sub menu
-            subMenu.Add(new Interfaces.ShowDate());
+            subMenu.Add(new Test.ShowDateActionMenuItem());
             
             //Add Show time to sub menu
-            subMenu.Add(new Interfaces.ShowTime());
+            subMenu.Add(new Test.ShowTimeActionMenuItem());
             //Add Show version to main menu
-            mainMenu.Add(new Interfaces.ShowVersion());
+            mainMenu.Add(new Test.ShowVersionActionMenuItem());
 
             mainMenu.Show();
         }

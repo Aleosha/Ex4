@@ -41,9 +41,10 @@
     <Compile Include="eAction.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="ShowDate.cs" />
-    <Compile Include="ShowTime.cs" />
-    <Compile Include="ShowVersion.cs" />
+    <Compile Include="ShowDateActionMenuItem.cs" />
+    <Compile Include="ShowTimeActionMenuItem.cs" />
+    <Compile Include="ShowVersionActionMenuItem.cs" />
+    <Compile Include="WordsCounterActionMenuItem.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
