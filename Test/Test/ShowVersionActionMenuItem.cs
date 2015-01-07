@@ -18,6 +18,8 @@ namespace Test
         public void DoAction()
         {
             Console.WriteLine("Version: 15.1.4.0");
+            Console.WriteLine("Press enter to continue...");
+            Console.ReadLine();
         }
     }
 }

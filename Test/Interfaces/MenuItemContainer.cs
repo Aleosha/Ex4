@@ -77,9 +77,11 @@ namespace Interfaces
             int option;
 
             do
-            {                
+            {
+                Console.Clear();
                 option = getOptionFromUser();
                 Console.Clear();
+                
                 if (option > 0)
                 {
                     IMenuItem chosenOption = getMenuItem(option);

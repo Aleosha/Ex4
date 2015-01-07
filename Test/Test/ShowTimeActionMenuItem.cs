@@ -17,6 +17,8 @@ namespace Test
         public void DoAction()
         {
             Console.WriteLine(DateTime.Now.ToString("HH:mm:ss"));
+            Console.WriteLine("Press enter to continue...");
+            Console.ReadLine();
         }
     }
 }

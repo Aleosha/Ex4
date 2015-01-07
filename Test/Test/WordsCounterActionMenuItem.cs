@@ -23,6 +23,8 @@ namespace Test
             string sentence = Console.ReadLine();
             numOfWords = sentence.Split(wordsSeparator).Length;
             Console.WriteLine("Your sentence contains {0} words", numOfWords);
+            Console.WriteLine("Press enter to continue...");
+            Console.ReadLine();
         }
     }
 }

@@ -83,7 +83,7 @@ namespace Test
                 default:
                     break;
             }
-            Console.WriteLine("Press any key to continue...");
+            Console.WriteLine("Press enter to continue...");
             Console.ReadLine();
         }
 
