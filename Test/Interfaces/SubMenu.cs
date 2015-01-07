@@ -15,7 +15,8 @@ namespace Interfaces
 
       
 
-        protected override void showQuitOption()
+        
+        override void ShowQuitOption()
         {
             Console.WriteLine(String.Format("{0}. {1}", 0, "Back"));
         }

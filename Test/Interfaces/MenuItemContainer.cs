@@ -22,24 +22,24 @@ namespace Interfaces
             m_MenuItems.Add(i_MenuItem);
         }
 
-        protected void showMenuItems()
+        protected void ShowMenuItems()
         {
             int count = 1;
             foreach(IMenuItem menuItem in m_MenuItems)
             {
                 Console.WriteLine(String.Format("{0}. {1}", count++, menuItem.Name));
             }
-            showQuitOption();
+            ShowQuitOption();
         }
 
-        protected abstract void showQuitOption();
+        protected abstract void ShowQuitOption();
 
-        protected bool isOptionValid(int i_MenuOption)
+        protected bool IsOptionValid(int i_MenuOption)
         {
             return (i_MenuOption >= 0 && i_MenuOption <= m_MenuItems.Count);            
         }
         
-        protected IMenuItem getMenuItem(int i_Option)
+        protected IMenuItem GetMenuItem(int i_Option)
         {
             return m_MenuItems[i_Option-1];
         }
@@ -52,11 +52,11 @@ namespace Interfaces
             do
             {
                 showMenuHeader();
-                showMenuItems();
+                ShowMenuItems();
                 Console.WriteLine("Please choose your option");
 
 
-                if (int.TryParse(Console.ReadLine(), out option) && isOptionValid(option))
+                if (int.TryParse(Console.ReadLine(), out option) && IsOptionValid(option))
                 {
                     isValidInput = true;
                 }
@@ -84,7 +84,7 @@ namespace Interfaces
                 
                 if (option > 0)
                 {
-                    IMenuItem chosenOption = getMenuItem(option);
+                    IMenuItem chosenOption = GetMenuItem(option);
 
                     if (chosenOption is IActionMenuItem)
                     {
